@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans';
+    box-sizing: border-box;
+}
+ 
+.container {
+    width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header {
+    padding: 36px 0;
+    height: 800px;
+width: 1440px;
+left: 1274px;
+top: -1139px;
+border-radius: 0px;
+position: relative;
+width: 1440px;
+height: 800px;
+
+background: #FFFFFF
+}
+ 
+.header__container {
+    display: flex;
+    align-items: center;
+}
+ 
+.header__logo {
+    margin-right: auto;
+}
+
+ 
+.header__link {
+    text-decoration: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: right;
+    letter-spacing: -0.2px;
+    color: #141414;
+    margin-right: 40px;
+}
+.hero__title {
+font-family: IBM Plex Sans;
+font-size: 64px;
+font-weight: 500;
+line-height: 78px;
+letter-spacing: -1.600000023841858px;
+text-align: center;
+}
+.hero__description {
+font-family: IBM Plex Sans;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: -0.20000000298023224px;
+text-align: center;
+}
+.hero__btn {
+    height: 58px;
+    width: 180px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+
+    /* ◼️ Background */
+
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Base Color */
+
+background: #FF8364;
+border-radius: 8px;
+
+height: 32px;
+width: 74px;
+left: 20px;
+top: 12.5999755859375px;
+border-radius: nullpx;
+
+
+font-family: IBM Plex Sans;
+font-size: 24px;
+font-weight: 700;
+line-height: 32px;
+letter-spacing: -0.4000000059604645px;
+text-align: left;
+
+/* 🔠 Text */
+
+
+position: absolute;
+width: 74px;
+height: 32px;
+left: 20px;
+top: calc(50% - 32px/2 - 0.4px);
+
+/* H4 24pt */
+
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+
+letter-spacing: -0.4px;
+
+/* White */
+
+color: #FFFFFF;
+}
+
+.info__first {
+    height: 250px;
+width: 445px;
+left: 165px;
+top: 113.39999389648438px;
+border-radius: nullpx;
+
+}
+.info__second {
+    height: 216px;
+width: 540px;
+left: 735px;
+top: 122.39999389648438px;
+border-radius: nullpx;
+
+}
+
+
+.new__lable {
+    height: 30px;
+width: 730px;
+left: 355px;
+top: 113px;
+border-radius: nullpx;
+
+font-family: IBM Plex Sans;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: -0.20000000298023224px;
+text-align: center;
+}
