@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">ввод числа</button>
+    <button id="btn2">вывести числа</button>
+    <textarea id="txt1" placeholder="введите число:"></textarea>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let txt1 = document.getElementById("txt1");
+        let arr =[];
+        let sumOfArr = 0;
+        let mean = 0;
+        let rms_numer = 0;
+        btn1.onclick = function(){
+            arr.push(txt1.value);
+        }
+        let min = function(){
+            num = arr [0];
+            for(let i = 1; i < arr.length; i++){
+                if(min > arr[i]){
+                    num = arr[i];
+                }
+            }
+            return num;
+        }
+        let max = function(){
+            num = arr [0];
+            for(let i = 1; i < arr.length; i++){
+                if(max < arr[i]){
+                    num = arr[i];
+                }
+            }
+            return num;
+        }
+        btn2.onclick = function(){
+            for(let i = 0; i < arr.length; i++){
+                arr[i] = Number(arr[i]);
+                sumOfArr += arr[i];
+            }
+            mean = sumOfArr/arr.length;
+            sumOfArr = 0;
+            for(let b = 0; b <arr.length; b++){
+                arr[b] = Number(arr[b]);
+                sumOfArr += Math.pow((arr[b] - mean), 2)
+            }
+            rms_Numer = Math.sqrt(sumOfArr/arr.length);
+            alert(rms_numer);
+            console.log(min());
+            console.log(max());
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 задание</title>
+</head>
+<body>
+    <button id="btn1">ввод числа</button>
+    <button id="btn2">вывести числа</button>
+    <textarea id="txt1" placeholder="введите число:"></textarea>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let txt1 = document.getElementById("txt1");
+        let count = 0;
+        let arr = []
+        btn1.onclick = function(){
+            arr.push(txt1.value);
+        }
+        btn2.onclick = function(){
+            /*console.log("max = " + max())
+            console.log("min = " + min())*/
+            min();
+            max();
+            alert("самое наименьшее число = " + min() + " самое наибольшее число = " + max());
+        }
+        let min = function(){
+            num = arr [0];
+            for(let i = 1; i < arr.length; i++){
+                if(min > arr[i]){
+                    num = arr[i];
+                }
+            }
+            return num;
+        }
+        let max = function(){
+            num = arr [0];
+            for(let i = 1; i < arr.length; i++){
+                if(max < arr[i]){
+                    num = arr[i];
+                }
+            }
+            return num;
+        }
+    </script>
+</body>
+</html>
