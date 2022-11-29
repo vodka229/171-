@@ -20,16 +20,14 @@
             arr.push(txt1.value);
         }
         btn2.onclick = function(){
-            /*console.log("max = " + max())
-            console.log("min = " + min())*/
             min();
             max();
-            alert("самое наименьшее число = " + min() + " самое наибольшее число = " + max());
+            alert("самое наибольшее число = " + max() + " самое наименьшее число = " + min());
         }
         let min = function(){
             num = arr [0];
             for(let i = 1; i < arr.length; i++){
-                if(min > arr[i]){
+                if(min < arr[i]){
                     num = arr[i];
                 }
             }
@@ -38,7 +36,7 @@
         let max = function(){
             num = arr [0];
             for(let i = 1; i < arr.length; i++){
-                if(max < arr[i]){
+                if(max > arr[i]){
                     num = arr[i];
                 }
             }
