@@ -22,22 +22,22 @@
             arr.push(txt1.value);
         }
         let min = function(){
-            num = arr [0];
+            mean = arr [0];
             for(let i = 1; i < arr.length; i++){
                 if(min > arr[i]){
-                    num = arr[i];
+                    mean = arr[i];
                 }
             }
-            return num;
+            return min;
         }
         let max = function(){
-            num = arr [0];
+            mean = arr [0];
             for(let i = 1; i < arr.length; i++){
                 if(max < arr[i]){
-                    num = arr[i];
+                    mean = arr[i];
                 }
             }
-            return num;
+            return max;
         }
         btn2.onclick = function(){
             for(let i = 0; i < arr.length; i++){
@@ -51,7 +51,7 @@
                 sumOfArr += Math.pow((arr[b] - mean), 2)
             }
             rms_Numer = Math.sqrt(sumOfArr/arr.length);
-            alert(rms_numer);
+            alert(sumOfArr);
             console.log(min());
             console.log(max());
         }
