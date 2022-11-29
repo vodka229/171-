@@ -15,18 +15,18 @@
         let btn2 = document.getElementById("btn2");
         let txt1 = document.getElementById("txt1");
         let arr = [];
-        let random = 1;
+        let chislo = 1;
         let sum = 0;
         btn1.onclick = function(){
             arr.push(txt1.value);
         }
         btn2.onclick = function(){
-            random = 1/arr.length;
+            chislo = 1/arr.length;
             for(let i = 0; i < arr.length; i++){
-                sum += arr[i] * random;
+                sum += arr[i] * chislo;
                 console.log(sum);
             }
-            alert(Math.round(sum));
+            alert(sum);
         }
         </script>
 </body>
