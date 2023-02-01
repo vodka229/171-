@@ -7,36 +7,84 @@
     <title>Document</title>
 </head>
 <body>
-    <style>
-        @import "postav.css";
-    </style>
-    <div class="left">
-    <div class="play1">
-    <p><button id="btn1">A</button></p>
-    <p><button id="btn2">B</button></p>
+    <link rel="stylesheet" href="12332.css">
+    <div class = "main">
+    <div class = "left">
+        <button class = "btn" onclick="Attack(1)">А</button>
+        <button class = "btn">Б</button>
+        <button class = "btn">П</button>
+        <button class = "btn">О</button>
+        <button class = "btn">З</button>
     </div>
-    <div class="schet1">
-    <p><button id="btn3">П</button></p>
-    <p><button id="btn4">О</button></p>
+    <div class="center">
+        <div class="teams">
+            <div class="teamA">
+                <p class = "player 1">5</p>
+                <p class = "player 1">6</p>
+                <p class = "player 1">1</p>
+                <p class = "player 1">4</p>
+                <p class = "player 1">3</p>
+                <p class = "player 1">2</p>
+            </div>
+            <div class="teamB">
+                <p class = "player 2">2</p>
+                <p class = "player 2">3</p>
+                <p class = "player 2">4</p>
+                <p class = "player 2">1</p>
+                <p class = "player 2">6</p>
+                <p class = "player 2">5</p>
+            </div>
+        </div>
+        <div class="main_score">
+            <div class="score">
+                <p class = "score_text">10</p>
+                <p class = "score_text">2</p>
+            </div>
+            <div class="score">
+                <p class = "score_text">10</p>
+                <p class = "score_text">2</p>
+            </div>
+        </div>
+     </div>
+    <div class = "left">
+        <button class = "btn" onclick="Attack(2)">А</button>
+        <button class = "btn">Б</button>
+        <button class = "btn">П</button>
+        <button class = "btn">О</button>
+        <button class = "btn">З</button>
     </div>
-    <p><button id="btn5">З</button></p>
 </div>
-<div class="rigth">
-    <div class="play2">
-    <p><button id="btn6">A</button></p>
-    <p><button id="btn7">B</button></p>
-    </div>
-    <div class="schet2">
-    <p><button id="btn8">П</button></p>
-    <p><button id="btn9">О</button></p>
-    </div>
-    <p><button id="btn10">З</button></p>
-    </div>
-</div>
-<div class="center">
-<div class="team1">
-    
-</div>
-</div>
+    <script>
+        function Attack(side){
+            alert(`${side} is attacking!`)
+            let players = document.getElementsByClassName(`${side}`);
+            let playerValues = [];
+            let playerValuesInt = [];
+
+            for(let i = 0; i < 6; i++){
+                playerValues.push(players[i].textContent);
+                playerValuesInt.push(players[i].textContent);
+            }
+            for(let i = 0; i <4; i++){
+                playerValuesInt.shift();
+            }
+            playerValuesInt.unshift(playerValues[0]);
+            playerValuesInt.pop();
+            playerValuesInt.pop();
+            playerValuesInt.push(playerValues[3]);
+            playerValuesInt.push(playerValues[4]);
+            
+            playerValuesInt.unshift(playerValues[5]);
+            playerValuesInt.unshift(playerValues[2]);
+            playerValuesInt.unshift(playerValues[1]);
+            
+            alert(playerValuesInt);
+            
+           
+            for(let i = 0; i < 6; i++){
+                players[i].textContent = playerValuesInt[i];
+            }
+        }
+    </script>
 </body>
 </html>
