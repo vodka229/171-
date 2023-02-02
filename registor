@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<textarea id = "username" placeholder="Введите логин"></textarea>
+	<textarea id = "password" placeholder="Введите пароль"></textarea>
+    <textarea id="namech" placeholder="Введите имя"></textarea>
+    <textarea id="surnamech" placeholder="Введите фамилию"></textarea>
+    <textarea id="age" placeholder="Введите возраст"></textarea><
+	<button onclick="register()">Register</button>
+	<button onclick="login()">Login</button>
+
+	<script type="text/javascript">
+
+	let usernames = JSON.parse(localStorage.getItem("usernames")) || [];
+  	let passwords = JSON.parse(localStorage.getItem("passwords")) || [];
+
+  function register() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    let isUsernameTaken = usernames.includes(username);
+
+    let isPasswordValid = password.length >= 4 && password.length <= 12;
+
+    if (!isUsernameTaken && isPasswordValid) {
+      usernames.push(username);
+      passwords.push(password);
+      localStorage.setItem("usernames", JSON.stringify(usernames));
+      localStorage.setItem("passwords", JSON.stringify(passwords));
+      alert("Регистрация завершена!");
+    } 
+	else {
+		if(isUsernameTaken){
+			alert("Регистрация не завершена. Ваше имя уже занято.");
+		}
+		else{
+			alert("Регистрация не завершена. Пароль не соответствует правильности, проверьте чтобы он был не меньше 4 и не больше 12 символов!");
+		}
+    }
+  }
+
+  function login() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    let bool = 0;
+
+	for(let i = 0; i <= usernames.length && i <= passwords.length; i++){
+		if(username === usernames[i] && password === passwords[i]){
+			bool = 1;
+		}
+	}
+
+
+    if (bool === 1) {
+      alert("Успешный вход!");
+    } else {
+      alert("Вход не удался. Проверьте своё имя и пароль, возможно вам придется регистрироваться.");
+    }
+  }
+  class users {
+    constructor (username, password, namech, surnamech, age) {
+        this.namech = namech
+        this.surnamech;
+
+    }
+  }
+  let arr = []
+  document.getElementById('register').onclick = function () {
+    let me = new Users(document.getElementById('username').value,)
+    let param = document.getElementById('username').value
+    if (document.getElementById('password').value.length >= 4 && document.getElementById('password').value.length <= 12) {
+        arr.push(document.getElementById('username').value, document.getElementById('password').value, document.getElementById('surnamech').value, document,getElementById('namech').value, document.getElementById('age').value)
+        alert("Пользователь зарегестрирован")
+    } else return
+  }
+  document.getElementById("register").onclick = function() {
+
+  }
+	</script>  
+</body>
+</html>
