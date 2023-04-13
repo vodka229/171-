@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let numRow = prompt("Введите количество строк");
+let numCol = prompt("Введите количество столбцов");
+
+let matrix = new Array(numRow);
+for (let i = 0; i < numRow; i++) {
+  matrix[i] = new Array(numCol);
+}
+
+for (let i = 0; i < numRow; i++) {
+  for (let j = 0; j < numCol; j++) {
+    matrix[i][j] = prompt(`Введите значение для ячейки (${i}, ${j})`);
+  }
+}
+
+let transposedMatrix = new Array(numCol);
+for (let i = 0; i < numCol; i++) {
+  transposedMatrix[i] = new Array(numRow);
+  for (let j = 0; j < numRow; j++) {
+    transposedMatrix[i][j] = matrix[j][i];
+  }
+}
+
+console.log("Исходная ", matrix);
+console.log("Транспонированная", transposedMatrix);
+    </script>
+</body>
+</html>
