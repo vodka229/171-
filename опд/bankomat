@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link rel="stylesheet" href="bank.css">
+   
+
+</head>
+<body>
+    
+    <button onclick=" let a = new Bank; a.paymobile()" class="btn" id = "button1" >Заплатить за мобильную связь</button>
+    <button   onclick="let b = new Bank; b.cash() "class="btn" id = "button2">Снять наличные</button>
+    <button  onclick=" let c = new Bank; c.replenishment ()"class="btn" id = "button3">Пополнить счет</button>
+    <button  onclick="let d = new Bank; d.balance () "class="btn" id = "button4">Проверить баланс</button>
+    <button  onclick=" let f = new Bank; f. enterTHEpassword()"class="btn" id = "button5">Ввести пароль</button>
+    <button  onclick="let g = new Bank; g.changpassword ()  "class="btn" id = "button6">Сменить пароль</button>
+    <button  onclick=" let h = new Bank; h.transfMoney()"class="btn" id = "button7">Перевести</button>
+
+    <script>
+      class User  {
+            constructor (card, parol, name) {
+           this.card=[55500055,71484523];
+           this.parol=[123445,456786];
+           this.name=["Sasha", "Alik"];
+           this.money=[10000,6565,5];
+            }
+        }
+
+    
+
+        let card = 0;
+        let summC = 0;
+        let oplata = false;
+        let p = new User()
+
+        class Bank {
+  paymobile() {
+    {
+                alert("Сумма оплаты мобильной связи 300 рублей");
+                if(oplata == false){
+                    if(summC >= 300){
+                        summC -= 300;
+                        alert(`Спасибо! Мы получили оплату.На вашем балансе теперь  ${summC}  рублей`)
+                        oplata = true;
+                    }
+                    else{
+                        alert(`На вашем счете недостаточно средств!Жаль! У вас ${summC} рублей,необходимо - 300 рублей`)
+                    }
+                }
+                else{
+                    alert("Мы получили вашу оплату! Супер!!")
+                }
+  }   
+  }
+   cash(){
+                let summ = prompt("Введите сумму, которую хотите снять");
+                if(summC >= summ){
+                    summC -= summ;
+                    alert(`Вы сняли ${summ}. Остаток на счёте ${summC}. `);
+                }
+                else{
+                    alert("На вашем счёте недостаточно средств. Жаль!");
+                }
+            }
+         replenishment () {
+
+          let summ = prompt("Введите сумму пополнения");
+                summC += Number(summ);
+                alert(`Вы пополнили баланс на ${summ} рублей.На вашей карте ${summC}`)
+         } 
+
+ balance () {
+
+  alert(`На вашей карте ${summC.toFixed(1)} рублей  `)
+ }  
+
+
+
+
+ enterTHEpassword(){
+ 
+                let card = prompt("Введите свою карту");
+                let o=true
+                for(let i = 0; i <= p.card.length; i++){
+                    if(card == p.card[i]){
+                        let password = prompt("Введите пароль к карте");
+                        if(password == p.parol[i]){
+                        let name = 0;
+                            switch(p.card[i]){
+                                case 55500055 :
+                                    name = 1;
+                                    break;
+                                case 71484523 :
+                                    name = 2;
+                                    break;
+                            } 
+                            alert(`Вы зашли в свой аккаунт ${p.name[name]}.`)
+                            o=false
+                            card = i;
+                            summС = p.money[i];
+                        }
+                        else{  o=true;
+                        }
+                      }
+                
+ }
+    if(o == true){
+                    alert("Неверная карта или пароль");
+                }       
+              }
+            
+
+  transfMoney() { 
+    let card = prompt("На какую карту перевести?");
+                for(let i = 0; i <= p.card.length; i++){
+                    if(card == p.card[i]){
+                        let Money_ = prompt("сколько перевести");
+                        console.log(p.money[i])
+                        p.money[i] += Number(Money_);
+                        console.log(p.money[i])
+                        summC -= Money_;
+  }
+                }
+  
+
+                }
+
+
+            }
+   
+
+</script>
+</body>
+</html>
